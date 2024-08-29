@@ -2,9 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import BookView from '@/views/BookView.vue'
-import AuthorBooksView from '@/views/AuthorBooksView.vue'
-import AnthologiesView from '@/views/AnthologiesView.vue'
-import AdminView from '@/views/AdminView.vue'
+import AboutView from '@/views/AboutView.vue'
 
 const routes = [
     {
@@ -18,21 +16,9 @@ const routes = [
         component: BookView
     },
     {
-        path: '/antologias',
-        name: 'Anthologies',
-        meta: { category: 'antologia' },
-        component: AnthologiesView,
-    },
-    {
-        path: '/Admin',
-        name: 'Admin',
-        component: AdminView,
-    },
-    {
-        path: '/libros_de_autor',
-        name: 'AuthorBooks',
-        meta: { category: 'autor' },        
-        component: AuthorBooksView
+        path: '/about',
+        name: 'about',
+        component: AboutView
     }
 ]
 

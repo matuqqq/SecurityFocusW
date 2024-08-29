@@ -1,5 +1,4 @@
 <template>
-  <!-- Navigation bar -->
   <header class="header">
     <!-- Logo -->
     <router-link to="/" class="logo">
@@ -14,17 +13,7 @@
     <nav class="nav corruptible">
       <ul class="menu">
         <li class="selectable"><router-link to="/">INICIO</router-link></li>
-        <li class="selectable"><router-link to="/admin">SOBRE NOSOTROS</router-link></li>
-        <li class="subnav">
-          <p class="subnavbtn">
-            EDICIONES <i class="fa fa-caret-down"></i>
-            <i class="fa fa-caret-up"></i>
-          </p>
-          <div class="subnav-content">
-            <router-link to="/libros_de_autor" class="selectable">Libros de autor</router-link>
-            <router-link to="/antologias" class="selectable">Antologias</router-link>
-          </div>
-        </li>
+        <li class="selectable"><router-link to="/about">SOBRE NOSOTROS</router-link></li>
         <li class="menuFace">
           <a id="face" class="selectable" href="mailto:hardstack.arg@gmail.com" target="_blank"><i class="bx bxl-gmail bx-sm" style="color: #ffffff"></i></a>
         </li>
@@ -32,232 +21,149 @@
           <a id="ig" class="selectable" href="https://www.instagram.com/hardstack.arg/" target="_blank"><i class="bx bxl-instagram bx-sm" style="color: #ffffff"></i></a>
         </li>
       </ul>
+      <div class="social-icons">
+        <a href="https://instagram.com" target="_blank" class="icon ig">IG</a>
+        <a href="mailto:example@example.com" class="icon mail">Mail</a>
+      </div>
     </nav>
+    <button class="hamburger" @click="toggleMenu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div v-if="isMenuOpen" class="mobile-menu">
+      <ul class="mobile-menu-list">
+        <li><a href="#inicio" @click="closeMenu">Inicio</a></li>
+        <li><a href="#habilidades" @click="closeMenu">Habilidades</a></li>
+        <li><a href="#servicios" @click="closeMenu">Servicios</a></li>
+        <li><a href="#contacto" @click="closeMenu">Contacto</a></li>
+        <li><a href="https://instagram.com" target="_blank" class="icon ig">IG</a></li>
+        <li><a href="mailto:example@example.com" class="icon mail">Mail</a></li>
+      </ul>
+    </div>
   </header>
 </template>
+
 <style scoped>
-/* Header */
 .header {
-  background-color: #9555d0;
-  box-shadow: 1px 1px 5px 0px gray;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-}
-
-/* Logo */
-.logo {
-  display: inline-block;
-  color: white;
-  margin-top: 0.6%;
-  margin-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background-color: #9555d0; /* Cambia el color de fondo según sea necesario */
+  border-bottom: 1px solid #ddd; /* Opcional: añade una línea de separación inferior */
 }
 
 .logo img {
-  width: 39vh;
+  height: 50px; /* Ajusta según el tamaño del logo */
 }
 
-/* Nav menu */
 .nav {
-  width: 100%;
-  position: sticky;
-  background-color: rgb(175 145 107);
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.nav ul {
+.nav-list {
+  display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.menu a,
-.menu p {
-  display: block;
-  padding: 3vh;
-  color: white;
+.nav-list li {
+  margin: 0 10px;
 }
 
-.menu p {
-  top: -16px;
-  position: relative;
-}
-
-.menu li {
-  font-size: 2vh;
-}
-
-.menu a:hover {
-  background-color: grey;
-}
-
-.nav {
-  height: 0;
-  transition: max-height 0.5s ease-out;
-}
-
-/* Sub nav */
-.subnav-content {
-  background-color: rgb(170 141 105);
-  z-index: 1;
-  display: none;
-  position: sticky;
-  font-size: 2vh;
-  margin-top: -35px;
-}
-.subnav-content a {
-  color: white;
+.nav-list a {
   text-decoration: none;
-  padding: 20px;
-  padding-left: 28px;
-}
-.subnav:hover .subnav-content {
-  display: block;
+  color: #333; /* Cambia el color del texto según sea necesario */
 }
 
-.fa-caret-up {
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons .icon {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333; /* Cambia el color del ícono según sea necesario */
+}
+
+.hamburger {
   display: none;
-}
-
-.subnav:hover .fa-caret-up {
-  display: contents;
-}
-
-.subnav:hover .fa-caret-down {
-  display: none;
-}
-
-/* Menu Icon */
-
-.hamb {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
   cursor: pointer;
-  float: right;
-  padding: 6vh 20px;
 }
 
-.hamb-line {
-  background: white;
-  display: block;
-  height: 2px;
-  position: relative;
-  width: 24px;
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333; /* Cambia el color de las barras según sea necesario */
+  margin: 3px 0;
 }
 
-.hamb-line::before,
-.hamb-line::after {
-  background: white;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-
-.hamb-line::before {
-  top: 5px;
-}
-
-.hamb-line::after {
-  top: -5px;
-}
-
-.side-menu {
+.mobile-menu {
   display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Cambia el color de fondo según sea necesario */
+  border: 1px solid #ddd; /* Opcional: añade una línea de separación */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra para el menú */
 }
 
-/* Toggle menu icon */
-
-.side-menu:checked ~ nav {
-  height: initial;
-  height: 100%;
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.side-menu:checked ~ .hamb .hamb-line {
-  background: transparent;
+.mobile-menu-list li {
+  padding: 10px 20px;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::before {
-  transform: rotate(-45deg);
-  top: 0;
+.mobile-menu-list a {
+  text-decoration: none;
+  color: #333; /* Cambia el color del texto según sea necesario */
 }
 
-.side-menu:checked ~ .hamb .hamb-line::after {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-/* Responsiveness */
-@media (max-width: 800px) {
-  .logo {
-  margin-top: 6%;
-}
-
-.logo img {
-  width: 19vh;
-}
-}
-
-@media (min-width: 800px) {
+@media (max-width: 610px) {
   .nav {
-    max-height: none;
-    top: 2px;
-    position: relative;
-    float: right;
-    width: fit-content;
-    background-color: transparent;
-  }
-
-  .menu li {
-    float: left;
-    font-size: initial;
-  }
-
-  .menu a:hover {
-    background-color: transparent;
-    color: grey;
-  }
-
-  .hamb {
     display: none;
   }
 
-  /* Sub nav */
-  .subnav-content {
-    padding: 20px 0;
-    display: none;
-    position: fixed;
-    font-size: initial;
-    background-color: rgb(175 145 107);
-    margin-left: initial;
-  }
-  .subnav-content a {
-    color: white;
+  .hamburger {
+    display: flex;
   }
 
-  .menu a,
-  .menu p {
+  .mobile-menu {
     display: block;
-    padding: 30px;
-    color: white;
-    height: 60px;
-  }
-}
-
-.nav {
-  webkit-box-shadow: initial;
-  box-shadow: initial;
-}
-
-@media only screen and (min-width: 601px) {
-  .nav {
-    height: initial;
-    line-height: initial;
   }
 }
 </style>
+
 <script>
 export default {
   name: "HeaderComponent",
+  data() {
+    return {
+      isMenuOpen: false
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    closeMenu() {
+      this.isMenuOpen = false;
+    }
+  }
 };
 
 /* eslint-disable */

@@ -122,11 +122,14 @@ export default {
     display: block;
     align-items: center;
     text-align: center;
+    align-content: center;
+    flex-wrap: wrap;
     padding-top: 40%;
   }
 
   .portadatext {
     padding-top: 5%;
+    text-align: center;
   }
 
   .portada img {
@@ -136,14 +139,17 @@ export default {
 
   .portada h1 {
     font-size: 10vw; /* Tamaño más pequeño para pantallas pequeñas */
+    text-align: center;
   }
 
   .portada h5 {
     font-size: 6vw; /* Tamaño más pequeño para pantallas pequeñas */
+    text-align: center;
   }
 
   .portada p {
     font-size: 4vw; /* Tamaño más pequeño para pantallas pequeñas */
+    text-align: center;
   }
 }
 </style>
