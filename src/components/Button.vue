@@ -1,7 +1,7 @@
 <template>
   <div class="botones">
     <div class="icons">
-      <a href="https://wa.me/541134104508" target="_blank" class="wp"><i class="bx bxl-whatsapp bx-md"></i></a>
+      <a href="https://wa.me/541123741777?text=Hola%20estoy%20interesado%20en%20uno%20de%20sus%20servicios!" target="_blank" class="wp"><i class="bx bxl-whatsapp bx-md"></i></a>
     </div>
   </div>
 </template>
