@@ -30,10 +30,6 @@
           <label for="barrio">Barrio:</label>
           <input type="text" id="barrio" v-model="formData.barrio" />
         </div>
-        <div class="form-group">
-          <label for="lote">Lote:</label>
-          <input type="text" id="lote" v-model="formData.lote" />
-        </div>
       </div>
 
       <div v-if="selectedForm === 'presupuesto'">
@@ -71,7 +67,6 @@ export default {
         email: '',
         phone: '',
         barrio: '',
-        lote: '',
         role: [],
         comments: '',
       },
