@@ -5,7 +5,7 @@
       <h5>¿Quienes somos?</h5>
       <p>
         Security Focus es un innovador proyecto desarrollado por la agencia
-      <a href="hardstack.netlify.app">Hardstack </a> para optimizar la seguridad y administración de barrios para optimizar la seguridad y administración de barrios
+      <a href="https://hardstack.netlify.app/">Hardstack </a> para optimizar la seguridad y administración de barrios para optimizar la seguridad y administración de barrios
         privados. Este sistema integral combina diversas tecnologías avanzadas
         para asegurar un control de acceso y seguridad eficaz.
       </p>
