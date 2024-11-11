@@ -1,148 +1,130 @@
-<template>
-  <div class="form-container">
-    <h2>Formulario de Contacto</h2>
-    <form @submit.prevent="handleSubmit">
-      <div class="form-group">
-        <label for="formType">Selecciona una opción:</label>
-        <select v-model="selectedForm" id="formType">
-          <option value="soporte">Soporte</option>
-          <option value="presupuesto">Solicitar un Presupuesto</option>
-        </select>
-      </div>
+<script setup lang="ts">
+import { ref } from 'vue'
 
-      <!-- Campos comunes -->
-      <div class="form-group">
-        <label for="name">Nombre y Apellido:</label>
-        <input type="text" id="name" v-model="formData.name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" v-model="formData.email" required />
-      </div>
-      <div class="form-group">
-        <label for="phone">Teléfono:</label>
-        <input type="tel" id="phone" v-model="formData.phone" required />
-      </div>
+const formData = ref({
+  fullName: '',
+  email: '',
+  phone: '',
+  message: ''
+})
 
-      <!-- Campos dinámicos -->
-      <div v-if="selectedForm === 'soporte'">
-        <div class="form-group">
-          <label for="barrio">Barrio:</label>
-          <input type="text" id="barrio" v-model="formData.barrio" />
-        </div>
-      </div>
+const isSubmitting = ref(false)
+const showSuccess = ref(false)
+const showError = ref(false)
 
-      <div v-if="selectedForm === 'presupuesto'">
-        <div class="form-group">
-          <label>Soy:</label>
-          <div>
-            <input type="checkbox" id="admin" value="administrador" v-model="formData.role" />
-            <label for="admin">Administrador</label>
-          </div>
-          <div>
-            <input type="checkbox" id="resident" value="residente" v-model="formData.role" />
-            <label for="resident">Residente</label>
-          </div>
-        </div>
-      </div>
+const handleSubmit = async (e: { preventDefault: () => void }) => {
+  e.preventDefault();
+  isSubmitting.value = true;
+  showSuccess.value = false;
+  showError.value = false;
 
-      <!-- Campo común -->
-      <div class="form-group">
-        <label for="comments">Comentarios:</label>
-        <textarea id="comments" v-model="formData.comments"></textarea>
-      </div>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      selectedForm: 'soporte', // Valor inicial
-      formData: {
-        name: '',
-        email: '',
-        phone: '',
-        barrio: '',
-        role: [],
-        comments: '',
+  try {
+    fetch('/sendEmail.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-    };
-  },
-  methods: {
-    handleSubmit() {
-      // Manejar el envío del formulario
-      console.log('Datos enviados:', this.formData);
-    },
-  },
+      body: new URLSearchParams(formData.value),
+    }).then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return response.text();
+  })
+  .then((data) => console.log("Response from PHP:", data))
+  .catch((error) => console.error("Fetch error:", error));
+  } catch (error) {
+    showError.value = true;
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 </script>
 
-<style scoped>
-/* Estilos */
-.form-container {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-}
+<template>
+  <div class="bg-white rounded-lg shadow-lg p-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Contactanos</h2>
+    
+    <form @submit="handleSubmit" class="space-y-6">
+      <div>
+        <label for="fullName" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+        <input
+          type="text"
+          id="fullName"
+          v-model="formData.fullName"
+          required
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+        />
+      </div>
 
-h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input
+          type="email"
+          id="email"
+          v-model="formData.email"
+          required
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+        />
+      </div>
 
-.form-group {
-  margin-bottom: 15px;
-}
+      <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+        <input
+          type="tel"
+          id="phone"
+          v-model="formData.phone"
+          required
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+        />
+      </div>
 
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #9555d0;
-}
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700">¿En qué podemos ayudarte?</label>
+        <textarea
+          id="message"
+          v-model="formData.message"
+          rows="4"
+          required
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+        ></textarea>
+      </div>
 
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
+      <div>
+        <button
+          type="submit"
+          :disabled="isSubmitting"
+          class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+        >
+          {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
+        </button>
+      </div>
 
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 5px;
-}
+      <div v-if="showSuccess" class="rounded-md bg-green-50 p-4">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <i class="bx bx-check-circle text-green-400 text-xl"></i>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-green-800">
+              ¡Mensaje enviado con éxito!
+            </p>
+          </div>
+        </div>
+      </div>
 
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #9555d0;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #803bb0;
-}
-
-@media (max-width: 768px) {
-  .form-container {
-    margin-top: 80%;
-  }
-}
-</style>
+      <div v-if="showError" class="rounded-md bg-red-50 p-4">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <i class="bx bx-x-circle text-red-400 text-xl"></i>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm font-medium text-red-800">
+              Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</template>
