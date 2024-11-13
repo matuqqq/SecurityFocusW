@@ -6,114 +6,98 @@ import "swiper/css/pagination";
 import "boxicons/css/boxicons.min.css";
 import FeatureCard from "../components/FeatureCard.vue";
 import ServiceCard from "../components/ServiceCard.vue";
+import { useI18n } from 'vue-i18n';
+import { computed } from 'vue';
 
-const features = [
-  {
-    title: "Tecnología Avanzada",
-    description:
-      "Incorporamos RFID, Face ID, y fotomultas para un control de acceso eficiente.",
-    icon: "bx bxl-slack bx-lg",
-  },
-  {
-    title: "Seguridad Integral",
-    description:
-      "Sistemas robustos desarrollados con Python para una protección completa del barrio.",
-    icon: "bx bxs-lock bx-lg",
-  },
-  {
-    title: "Gestión Simplificada",
-    description:
-      "Aplicaciones móviles en React Native y una interfaz de Windows Forms para una administración fácil y eficiente.",
-    icon: "bx bxs-cog bx-lg",
-  },
-  {
-    title: "Soporte Especializado",
-    description:
-      "Ofrecemos asistencia personalizada para asegurar el óptimo funcionamiento de nuestro sistema.",
-    icon: "bx bxs-comment-detail bx-lg",
-  },
-  {
-    title: "Alta Confiabilidad",
-    description:
-      "Nuestra infraestructura basada en SQL y Prisma asegura una alta disponibilidad y fiabilidad.",
-    icon: "bx bxs-check-shield bx-lg",
-  },
-];
+const { t } = useI18n();
 
-const services = [
+// Features: Usamos el JSON para definir las características
+const features = computed(() => [
   {
-    category: "Aplicación Movil",
+    title: t('Home.Features.TecnologíaAvanzada.title'),
+    description: t('Home.Features.TecnologíaAvanzada.description'),
+    icon: t('Home.Features.TecnologíaAvanzada.icon'),
+  },
+  {
+    title: t('Home.Features.SeguridadIntegral.title'),
+    description: t('Home.Features.SeguridadIntegral.description'),
+    icon: t('Home.Features.SeguridadIntegral.icon'),
+  },
+  {
+    title: t('Home.Features.GestionSimplificada.title'),
+    description: t('Home.Features.GestionSimplificada.description'),
+    icon: t('Home.Features.GestionSimplificada.icon'),
+  },
+  {
+    title: t('Home.Features.SoporteEspecializado.title'),
+    description: t('Home.Features.SoporteEspecializado.description'),
+    icon: t('Home.Features.SoporteEspecializado.icon'),
+  },
+  {
+    title: t('Home.Features.AltaConfiabilidad.title'),
+    description: t('Home.Features.AltaConfiabilidad.description'),
+    icon: t('Home.Features.AltaConfiabilidad.icon'),
+  }
+]);
+
+// Services: Usamos el JSON para definir los servicios
+const services = computed(() => [
+  {
+    category: t('Home.Services.MobileApp.category'),
+    icons: [
+      { class: "bx bx-news bx-lg", description: t('Home.Services.MobileApp.icons[0].description') },
+      { class: "bx bx-minus-circle bx-lg", description: t('Home.Services.MobileApp.icons[1].description') },
+      { class: "bx bx-pie-chart-alt-2 bx-lg", description: t('Home.Services.MobileApp.icons[2].description') },
+      { class: "bx bx-calendar-event bx-lg", description: t('Home.Services.MobileApp.icons[3].description') },
+      { class: "bx bx-message-rounded-error bx-lg", description: t('Home.Services.MobileApp.icons[4].description') },
+      { class: "bx bx-user-plus bx-lg", description: t('Home.Services.MobileApp.icons[5].description') },
+    ],
     path: "/mobile-app",
-    icons: [
-      { class: "bx bx-news bx-lg", description: "Novedades" },
-      { class: "bx bx-minus-circle bx-lg", description: "Infracciones" },
-      { class: "bx bx-pie-chart-alt-2 bx-lg", description: "Encuestas" },
-      { class: "bx bx-calendar-event bx-lg", description: "Reservas" },
-      { class: "bx bx-message-rounded-error bx-lg", description: "Denuncias" },
-      { class: "bx bx-user-plus bx-lg", description: "Visitas" },
-    ],
   },
   {
-    category: "Aplicación para Windows",
+    category: t('Home.Services.WindowsApp.category'),
+    icons: [
+      { class: "bx bx-exit bx-lg", description: t('Home.Services.WindowsApp.icons[0].description') },
+      { class: "bx bx-user-check bx-lg", description: t('Home.Services.WindowsApp.icons[1].description') },
+      { class: "bx bx-search-alt-2 bx-lg", description: t('Home.Services.WindowsApp.icons[2].description') },
+      { class: "bx bx-package bx-lg", description: t('Home.Services.WindowsApp.icons[3].description') },
+      { class: "bx bx-clipboard bx-lg", description: t('Home.Services.WindowsApp.icons[4].description') },
+      { class: "bx bxs-traffic-barrier bx-lg", description: t('Home.Services.WindowsApp.icons[5].description') },
+    ],
     path: "/windows-app",
-    icons: [
-      { class: "bx bx-exit bx-lg", description: "Ingreso y egreso" },
-      { class: "bx bx-user-check bx-lg", description: "Gestión de invitados" },
-      { class: "bx bx-search-alt-2 bx-lg", description: "Buscar usuarios" },
-      { class: "bx bx-package bx-lg", description: "Correspondencia" },
-      { class: "bx bx-clipboard bx-lg", description: "Registros" },
-      {
-        class: "bx bxs-traffic-barrier bx-lg",
-        description: "Control de Acceso",
-      },
-    ],
   },
   {
-    category: "Control de Acceso",
-    path: "/access-control",
+    category: t('Home.Services.AccessControl.category'),
     icons: [
-      { class: "bx bx-id-card bx-lg", description: "RFID" },
-      { class: "bx bxs-face bx-lg", description: "Face ID" },
-      { class: "bx bx-fingerprint bx-lg", description: "Huella digital" },
-      { class: "bx bx-camera-home bx-lg", description: "Fotomultas" },
+      { class: "bx bx-id-card bx-lg", description: t('Home.Services.AccessControl.icons[0].description') },
+      { class: "bx bxs-face bx-lg", description: t('Home.Services.AccessControl.icons[1].description') },
+      { class: "bx bx-fingerprint bx-lg", description: t('Home.Services.AccessControl.icons[2].description') },
+      { class: "bx bx-camera-home bx-lg", description: t('Home.Services.AccessControl.icons[3].description') },
     ],
-  },
-];
+    path: "/access-control",
+  }
+]);
 </script>
 
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Hero Section -->
-    <div
-      class="flex flex-col md:flex-row items-center justify-between gap-12 mb-16 front"
-    >
+    <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-16 front">
       <div class="flex-1">
-        <h1
-          class="text-4xl font-bold text-primary-light dark:text-primary-DEFAULT mb-4 frontext"
-        >
-          Security Focus
+        <h1 class="text-4xl font-bold text-primary-light dark:text-primary-DEFAULT mb-4 frontext">
+          {{ $t('Home.SecurityFocus.title') }}
         </h1>
         <h5 class="text-xl font-semibold text-text-light dark:text-text-dark mb-4 frontext">
-          ¿Qué es?
+          {{ $t('Home.SecurityFocus.whatIs') }}
         </h5>
         <p class="text-text-light dark:text-text-dark text-lg leading-relaxed frontext">
-          Security Focus es un innovador proyecto desarrollado por la agencia
-          <a
-            href="https://hardstack.netlify.app"
-            class="text-primary-light dark:text-primary-DEFAULT hover:text-blue-800"
-            >Hardstack</a
-          >
-          para optimizar la seguridad y administración de barrios privados. Este
-          sistema integral combina diversas tecnologías avanzadas para asegurar
-          un control de acceso y seguridad eficaz.
+          {{ $t('Home.SecurityFocus.description') }}
         </p>
       </div>
 
       <div class="flex-1">
         <div class="aspect-w-16 aspect-h-9 rounded-lg">
-          <div
-            class="w-full h-[400px] rounded-lg flex items-center justify-center"
-          >
+          <div class="w-full h-[400px] rounded-lg flex items-center justify-center">
             <img src="../assets/grafica.png" alt="" class="img" />
           </div>
         </div>
@@ -122,10 +106,8 @@ const services = [
 
     <!-- Features Section -->
     <div class="py-12">
-      <h2
-        class="text-3xl font-bold text-center text-primary-light dark:text-primary-DEFAULT mb-12"
-      >
-        ¿Por qué elegirnos?
+      <h2 class="text-3xl font-bold text-center text-primary-light dark:text-primary-DEFAULT mb-12">
+        {{ $t('Home.SecurityFocus.whyChooseUs') }}
       </h2>
 
       <swiper
@@ -135,12 +117,8 @@ const services = [
         :pagination="{ clickable: true }"
         :autoplay="{ delay: 3000, disableOnInteraction: false }"
         :breakpoints="{
-          '640': {
-            slidesPerView: 2,
-          },
-          '1024': {
-            slidesPerView: 3,
-          },
+          '640': { slidesPerView: 2 },
+          '1024': { slidesPerView: 3 }
         }"
         class="features-swiper"
       >
@@ -156,10 +134,8 @@ const services = [
 
     <!-- Services Section -->
     <div class="py-12">
-      <h2
-        class="text-3xl font-bold text-center text-primary-light dark:text-primary-DEFAULT mb-12"
-      >
-        Nuestros Servicios
+      <h2 class="text-3xl font-bold text-center text-primary-light dark:text-primary-DEFAULT mb-12">
+        {{ $t('Home.SecurityFocus.ourServices') }}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ServiceCard

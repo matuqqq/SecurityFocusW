@@ -7,7 +7,7 @@
       class="text-4xl font-bold text-primary-light dark:text-primary-DEFAULT mb-8"
       style="margin-bottom: 5vh; text-align: center"
     >
-      Aplicación Móvil
+      {{ $t('MobileApp.tituloPrincipal') }}   
     </h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -16,12 +16,12 @@
           <i
             class="bx bx-news text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Novedades</h3>
+          <h3 class="text-xl font-semibold">    
+            {{ $t('MobileApp.novedades.titulo') }}   
+          </h3>
         </div>
         <p class="text-gray-600">
-          Mantente informado sobre las últimas actualizaciones y noticias
-          importantes del barrio a través de notificaciones y una sección de
-          noticias actualizado en tiempo real.
+          {{ $t('MobileApp.novedades.descripcion') }}   
         </p>
       </div>
 
@@ -30,11 +30,12 @@
           <i
             class="bx bx-minus-circle text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Infracciones</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.infracciones.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Gestiona y visualiza las infracciones registradas y recibe
-          notificaciones instantáneas.
+          {{ $t('MobileApp.infracciones.descripcion') }} 
         </p>
       </div>
 
@@ -43,12 +44,12 @@
           <i
             class="bx bx-pie-chart-alt-2 text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Encuestas</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.encuestas.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Participa en encuestas comunitarias, vota sobre decisiones importantes
-          y visualiza resultados en tiempo real para mejorar la vida en
-          comunidad.
+          {{ $t('MobileApp.encuestas.descripcion') }} 
         </p>
       </div>
 
@@ -57,11 +58,12 @@
           <i
             class="bx bx-calendar-event text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Reservas</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.reservas.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Sistema integrado para reservar espacios comunes, canchas deportivas y
-          salones de eventos con confirmación instantánea.
+          {{ $t('MobileApp.reservas.descripcion') }} 
         </p>
       </div>
 
@@ -70,11 +72,12 @@
           <i
             class="bx bx-message-rounded-error text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Denuncias</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.denuncias.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Canal directo para reportar incidentes o situaciones que requieran
-          atención.
+          {{ $t('MobileApp.denuncias.descripcion') }} 
         </p>
       </div>
 
@@ -83,11 +86,12 @@
           <i
             class="bx bx-user-plus text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Visitas</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.visitas.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Gestiona el ingreso de visitas de manera anticipada, genera códigos QR
-          para acceso rápido y mantén un registro de invitados.
+          {{ $t('MobileApp.visitas.descripcion') }} 
         </p>
       </div>
 
@@ -96,11 +100,12 @@
           <i
             class="bx bx-receipt text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Expensas</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.expensas.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Consulta y descarga los comprobantes de tus expensas mensuales y
-          mantén un registro de tus pagos.
+          {{ $t('MobileApp.expensas.descripcion') }} 
         </p>
       </div>
 
@@ -109,11 +114,12 @@
           <i
             class="bx bx-file text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Documentos</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.documentos.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Accede a documentos importantes, reglamentos y otros archivos
-          compartidos por la administración.
+          {{ $t('MobileApp.documentos.descripcion') }} 
         </p>
       </div>
 
@@ -122,11 +128,12 @@
           <i
             class="bx bx-credit-card text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Informar Pago</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.informarPago.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Reporta tus pagos de expensas o servicios de manera rápida y sencilla,
-          adjuntando comprobantes si es necesario.
+          {{ $t('MobileApp.informarPago.descripcion') }} 
         </p>
       </div>
 
@@ -135,10 +142,12 @@
           <i
             class="bx bx-envelope text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Correspondencia</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.correspondencia.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Recibe notificaciones sobre la llegada de correspondencia o paquetes.
+          {{ $t('MobileApp.correspondencia.descripcion') }} 
         </p>
       </div>
 
@@ -147,11 +156,12 @@
           <i
             class="bx bx-map text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Guía Barrial</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.guiaBarrial.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Encuentra y comparte recomendaciones de servicios y lugares de interés
-          con la comunidad.
+          {{ $t('MobileApp.guiaBarrial.descripcion') }} 
         </p>
       </div>
 
@@ -160,11 +170,12 @@
           <i
             class="bx bx-question-mark text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Consultas</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.consultas.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Envía tus preguntas y recibe asesoramiento directo de la
-          administración y/o guardia.
+          {{ $t('MobileApp.consultas.descripcion') }} 
         </p>
       </div>
 
@@ -173,25 +184,14 @@
           <i
             class="bx bx-group text-3xl text-primary-light dark:text-primary-DEFAULT mr-4"
           ></i>
-          <h3 class="text-xl font-semibold">Familia</h3>
+          <h3 class="text-xl font-semibold">
+            {{ $t('MobileApp.familia.titulo') }} 
+          </h3>
         </div>
         <p class="text-gray-600">
-          Gestiona los miembros de tu familia, incluyendo su acceso y permisos
-          dentro de la comunidad.
+          {{ $t('MobileApp.familia.descripcion') }} 
         </p>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-.cont {
-  margin-top: 8%;
-}
-
-@media (max-width: 550px) {
-  .cont {
-    margin-top: 15%;
-  }
-}
-</style>

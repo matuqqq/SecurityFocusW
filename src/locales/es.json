@@ -1,0 +1,245 @@
+{
+    "form": {
+        "title": "Contactanos",
+        "fullName": "Nombre completo",
+        "email": "Email",
+        "phone": "Teléfono",
+        "message": "¿En qué podemos ayudarte?",
+        "sendMessage": "Enviar mensaje",
+        "sending": "Enviando...",
+        "success": "¡Mensaje enviado con éxito!",
+        "error": "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente."
+    },
+    "footer": {
+        "copyright": "Todos los derechos reservados."
+    },
+    "navigation": {
+        "home": "Inicio",
+        "about": "Sobre Nosotros"
+    },
+    "AccessControl": {
+        "tituloPrincipal": "Control de Acceso",
+        "rfid": {
+            "titulo": "RFID",
+            "descripcion": "Sistema de identificación por radiofrecuencia para acceso rápido y seguro, con tarjetas personalizadas para residentes y vehículos."
+        },
+        "faceId": {
+            "titulo": "Face ID",
+            "descripcion": "Reconocimiento facial avanzado para verificación de identidad sin contacto, con alta precisión y velocidad de procesamiento."
+        },
+        "huellaDigital": {
+            "titulo": "Huella digital",
+            "descripcion": "Autenticación biométrica mediante huella digital para mayor seguridad en puntos de acceso críticos."
+        },
+        "fotomultas": {
+            "titulo": "Fotomultas",
+            "descripcion": "Sistema automatizado de detección de infracciones con captura de imágenes y generación automática de multas."
+        }
+    },
+    "MobileApp": {
+        "tituloPrincipal": "Aplicación Móvil",
+        "novedades": {
+            "titulo": "Novedades",
+            "descripcion": "Mantente informado sobre las últimas actualizaciones y noticias importantes del barrio a través de notificaciones y una sección de noticias actualizado en tiempo real."
+        },
+        "infracciones": {
+            "titulo": "Infracciones",
+            "descripcion": "Gestiona y visualiza las infracciones registradas y recibe notificaciones instantáneas."
+        },
+        "encuestas": {
+            "titulo": "Encuestas",
+            "descripcion": "Participa en encuestas comunitarias, vota sobre decisiones importantes y visualiza resultados en tiempo real para mejorar la vida en comunidad."
+        },
+        "reservas": {
+            "titulo": "Reservas",
+            "descripcion": "Sistema integrado para reservar espacios comunes, canchas deportivas y salones de eventos con confirmación instantánea."
+        },
+        "denuncias": {
+            "titulo": "Denuncias",
+            "descripcion": "Canal directo para reportar incidentes o situaciones que requieran atención."
+        },
+        "visitas": {
+            "titulo": "Visitas",
+            "descripcion": "Gestiona el ingreso de visitas de manera anticipada, genera códigos QR para acceso rápido y mantén un registro de invitados."
+        },
+        "expensas": {
+            "titulo": "Expensas",
+            "descripcion": "Consulta y descarga los comprobantes de tus expensas mensuales y mantén un registro de tus pagos."
+        },
+        "documentos": {
+            "titulo": "Documentos",
+            "descripcion": "Accede a documentos importantes, reglamentos y otros archivos compartidos por la administración."
+        },
+        "informarPago": {
+            "titulo": "Informar Pago",
+            "descripcion": "Reporta tus pagos de expensas o servicios de manera rápida y sencilla, adjuntando comprobantes si es necesario."
+        },
+        "correspondencia": {
+            "titulo": "Correspondencia",
+            "descripcion": "Recibe notificaciones sobre la llegada de correspondencia o paquetes."
+        },
+        "guiaBarrial": {
+            "titulo": "Guía Barrial",
+            "descripcion": "Encuentra y comparte recomendaciones de servicios y lugares de interés con la comunidad."
+        },
+        "consultas": {
+            "titulo": "Consultas",
+            "descripcion": "Envía tus preguntas y recibe asesoramiento directo de la administración y/o guardia."
+        },
+        "familia": {
+            "titulo": "Familia",
+            "descripcion": "Gestiona los miembros de tu familia, incluyendo su acceso y permisos dentro de la comunidad."
+        }
+    },
+    "WindowsApp": {
+        "Aplicacion": {
+            "titulo": "Aplicación para Windows"
+        },
+        "IngresoYegreso": {
+            "titulo": "Ingreso y egreso",
+            "descripcion": "Control eficiente de entradas y salidas con registro automático, verificación de identidad y alertas en tiempo real."
+        },
+        "GestionDeInvitados": {
+            "titulo": "Gestión de invitados",
+            "descripcion": "Sistema completo para administrar visitantes, con pre-registro, validación de datos y seguimiento de permanencia."
+        },
+        "BuscarUsuarios": {
+            "titulo": "Buscar usuarios",
+            "descripcion": "Búsqueda avanzada de residentes y visitantes con filtros personalizados y acceso rápido a información relevante."
+        },
+        "Correspondencia": {
+            "titulo": "Correspondencia",
+            "descripcion": "Gestión integral de paquetería y correspondencia con notificaciones automáticas y registro de entregas."
+        },
+        "Registros": {
+            "titulo": "Registros",
+            "descripcion": "Sistema de logs detallado con historial completo de operaciones y generación de reportes personalizados."
+        },
+        "ControlDeAcceso": {
+            "titulo": "Control de Acceso",
+            "descripcion": "Gestión centralizada de todos los puntos de acceso con monitoreo en tiempo real y control de barreras."
+        }
+    },
+    "SobreNosotros": {
+        "titulo": "Sobre Nosotros",
+        "descripcion": "Hard Stack está formado por los mejores estudiantes de informática y ciencias de la computación. Nuestro equipo posee amplios conocimientos en hardware, software, armado de PCs y desarrollo de aplicaciones. Somos un grupo apasionado y cohesionado, comprometido con la misión de servir a la comunidad a través de nuestras habilidades en el campo de la informática."
+    },
+    "Home": {
+        "SecurityFocus": {
+            "title": "Security Focus",
+            "whatIs": "¿Qué es?",
+            "description": "Security Focus es un innovador proyecto desarrollado por la agencia Hardstack para optimizar la seguridad y administración de barrios privados. Este sistema integral combina diversas tecnologías avanzadas para asegurar un control de acceso y seguridad eficaz.",
+            "whyChooseUs": "¿Por qué elegirnos?",
+            "ourServices": "Nuestros Servicios"
+        },
+        "Features": {
+            "TecnologíaAvanzada": {
+                "title": "Tecnología Avanzada",
+                "description": "Incorporamos RFID, Face ID, y fotomultas para un control de acceso eficiente.",
+                "icon": "bx bxl-slack bx-lg"
+            },
+            "SeguridadIntegral": {
+                "title": "Seguridad Integral",
+                "description": "Sistemas robustos desarrollados con Python para una protección completa del barrio.",
+                "icon": "bx bxs-lock bx-lg"
+            },
+            "GestionSimplificada": {
+                "title": "Gestión Simplificada",
+                "description": "Aplicaciones móviles en React Native y una interfaz de Windows Forms para una administración fácil y eficiente.",
+                "icon": "bx bxs-cog bx-lg"
+            },
+            "SoporteEspecializado": {
+                "title": "Soporte Especializado",
+                "description": "Ofrecemos asistencia personalizada para asegurar el óptimo funcionamiento de nuestro sistema.",
+                "icon": "bx bxs-comment-detail bx-lg"
+            },
+            "AltaConfiabilidad": {
+                "title": "Alta Confiabilidad",
+                "description": "Nuestra infraestructura basada en SQL y Prisma asegura una alta disponibilidad y fiabilidad.",
+                "icon": "bx bxs-check-shield bx-lg"
+            }
+        },
+        "Services": {
+            "MobileApp": {
+                "category": "Aplicación Movil",
+                "icons": [
+                    {
+                        "class": "bx bx-news bx-lg",
+                        "description": "Novedades"
+                    },
+                    {
+                        "class": "bx bx-minus-circle bx-lg",
+                        "description": "Infracciones"
+                    },
+                    {
+                        "class": "bx bx-pie-chart-alt-2 bx-lg",
+                        "description": "Encuestas"
+                    },
+                    {
+                        "class": "bx bx-calendar-event bx-lg",
+                        "description": "Reservas"
+                    },
+                    {
+                        "class": "bx bx-message-rounded-error bx-lg",
+                        "description": "Denuncias"
+                    },
+                    {
+                        "class": "bx bx-user-plus bx-lg",
+                        "description": "Visitas"
+                    }
+                ]
+            },
+            "WindowsApp": {
+                "category": "Aplicación para Windows",
+                "icons": [
+                    {
+                        "class": "bx bx-exit bx-lg",
+                        "description": "Ingreso y egreso"
+                    },
+                    {
+                        "class": "bx bx-user-check bx-lg",
+                        "description": "Gestión de invitados"
+                    },
+                    {
+                        "class": "bx bx-search-alt-2 bx-lg",
+                        "description": "Buscar usuarios"
+                    },
+                    {
+                        "class": "bx bx-package bx-lg",
+                        "description": "Correspondencia"
+                    },
+                    {
+                        "class": "bx bx-clipboard bx-lg",
+                        "description": "Registros"
+                    },
+                    {
+                        "class": "bx bxs-traffic-barrier bx-lg",
+                        "description": "Control de Acceso"
+                    }
+                ]
+            },
+            "AccessControl": {
+                "category": "Control de Acceso",
+                "icons": [
+                    {
+                        "class": "bx bx-id-card bx-lg",
+                        "description": "RFID"
+                    },
+                    {
+                        "class": "bx bxs-face bx-lg",
+                        "description": "Face ID"
+                    },
+                    {
+                        "class": "bx bx-fingerprint bx-lg",
+                        "description": "Huella digital"
+                    },
+                    {
+                        "class": "bx bx-camera-home bx-lg",
+                        "description": "Fotomultas"
+                    }
+                ]
+            },
+            "ConocerMas":"Conocer más"
+        }
+    }
+}

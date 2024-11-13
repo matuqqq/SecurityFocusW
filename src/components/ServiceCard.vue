@@ -21,7 +21,6 @@ defineProps<{
       :to="path"
       class="mt-6 inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-light dark:bg-primary-dark text-text-dark dark:text-text-dark hover:bg-primary-DEFAULT focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
     >
-      Conocer más
-    </RouterLink>
+    {{ $t('Home.Services.ConocerMas') }}    </RouterLink>
   </div>
 </template>

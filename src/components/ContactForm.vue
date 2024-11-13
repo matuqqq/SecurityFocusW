@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
 
 const formData = ref({
   fullName: '',
@@ -39,15 +42,25 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
     isSubmitting.value = false;
   }
 };
+
+// Botón para cambiar el idioma
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 </script>
 
 <template>
   <div class="bg-white rounded-lg shadow-lg p-8">
-    <h2 class="text-2xl font-bold text-gray-900 mb-6">Contactanos</h2>
-    
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ t('form.title') }}</h2>
+
+    <!-- Botón para cambiar el idioma -->
+    <button @click="toggleLanguage">
+      <img :src="locale === 'es' ? 'path/to/argentina-flag.png' : 'path/to/usa-flag.png'" alt="Change language" />
+    </button>
+
     <form @submit="handleSubmit" class="space-y-6">
       <div>
-        <label for="fullName" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+        <label for="fullName" class="block text-sm font-medium text-gray-700">{{ t('form.fullName') }}</label>
         <input
           type="text"
           id="fullName"
@@ -58,7 +71,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
       </div>
 
       <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <label for="email" class="block text-sm font-medium text-gray-700">{{ t('form.email') }}</label>
         <input
           type="email"
           id="email"
@@ -69,7 +82,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
       </div>
 
       <div>
-        <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+        <label for="phone" class="block text-sm font-medium text-gray-700">{{ t('form.phone') }}</label>
         <input
           type="tel"
           id="phone"
@@ -80,7 +93,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
       </div>
 
       <div>
-        <label for="message" class="block text-sm font-medium text-gray-700">¿En qué podemos ayudarte?</label>
+        <label for="message" class="block text-sm font-medium text-gray-700">{{ t('form.message') }}</label>
         <textarea
           id="message"
           v-model="formData.message"
@@ -96,7 +109,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
           :disabled="isSubmitting"
           class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
         >
-          {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
+          {{ isSubmitting ? t('form.sending') : t('form.sendMessage') }}
         </button>
       </div>
 
@@ -107,7 +120,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
           </div>
           <div class="ml-3">
             <p class="text-sm font-medium text-green-800">
-              ¡Mensaje enviado con éxito!
+              {{ t('form.success') }}
             </p>
           </div>
         </div>
@@ -120,7 +133,7 @@ const handleSubmit = async (e: { preventDefault: () => void }) => {
           </div>
           <div class="ml-3">
             <p class="text-sm font-medium text-red-800">
-              Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
+              {{ t('form.error') }}
             </p>
           </div>
         </div>

@@ -1,0 +1,245 @@
+{
+    "form": {
+        "title": "Contact Us",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone",
+        "message": "How can we help you?",
+        "sendMessage": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent successfully!",
+        "error": "There was an error sending the message. Please try again."
+    },
+    "footer": {
+        "copyright": "All rights reserved."
+    },
+    "navigation": {
+        "home": "Home",
+        "about": "About Us"
+    },
+    "AccessControl": {
+        "tituloPrincipal": "Access Control",
+        "rfid": {
+            "titulo": "RFID",
+            "descripcion": "Radiofrequency identification system for quick and secure access, with personalized cards for residents and vehicles."
+        },
+        "faceId": {
+            "titulo": "Face ID",
+            "descripcion": "Advanced facial recognition for contactless identity verification, with high accuracy and processing speed."
+        },
+        "huellaDigital": {
+            "titulo": "Fingerprint",
+            "descripcion": "Biometric authentication via fingerprint for greater security in critical access points."
+        },
+        "fotomultas": {
+            "titulo": "Traffic Violations",
+            "descripcion": "Automated infraction detection system with image capture and automatic ticket generation."
+        }
+    },
+    "MobileApp": {
+        "tituloPrincipal": "Mobile App",
+        "novedades": {
+            "titulo": "News",
+            "descripcion": "Stay informed about the latest updates and important news of the neighborhood through notifications and a real-time news section."
+        },
+        "infracciones": {
+            "titulo": "Violations",
+            "descripcion": "Manage and view registered violations and receive instant notifications."
+        },
+        "encuestas": {
+            "titulo": "Surveys",
+            "descripcion": "Participate in community surveys, vote on important decisions, and view real-time results to improve community life."
+        },
+        "reservas": {
+            "titulo": "Reservations",
+            "descripcion": "Integrated system to book common spaces, sports fields, and event rooms with instant confirmation."
+        },
+        "denuncias": {
+            "titulo": "Reports",
+            "descripcion": "Direct channel to report incidents or situations requiring attention."
+        },
+        "visitas": {
+            "titulo": "Visits",
+            "descripcion": "Manage guest entries in advance, generate QR codes for quick access, and keep a guest log."
+        },
+        "expensas": {
+            "titulo": "Expenses",
+            "descripcion": "Check and download your monthly expense receipts and keep a record of your payments."
+        },
+        "documentos": {
+            "titulo": "Documents",
+            "descripcion": "Access important documents, regulations, and other files shared by management."
+        },
+        "informarPago": {
+            "titulo": "Report Payment",
+            "descripcion": "Quickly and easily report your payments for expenses or services, attaching receipts if necessary."
+        },
+        "correspondencia": {
+            "titulo": "Mail",
+            "descripcion": "Receive notifications about the arrival of mail or packages."
+        },
+        "guiaBarrial": {
+            "titulo": "Neighborhood Guide",
+            "descripcion": "Find and share recommendations for services and places of interest with the community."
+        },
+        "consultas": {
+            "titulo": "Inquiries",
+            "descripcion": "Send your questions and receive direct advice from management and/or security."
+        },
+        "familia": {
+            "titulo": "Family",
+            "descripcion": "Manage your family members, including their access and permissions within the community."
+        }
+    },
+    "WindowsApp": {
+        "Aplicacion": {
+            "titulo": "Windows Application"
+        },
+        "IngresoYegreso": {
+            "titulo": "Entrance and Exit",
+            "descripcion": "Efficient control of entries and exits with automatic registration, identity verification, and real-time alerts."
+        },
+        "GestionDeInvitados": {
+            "titulo": "Guest Management",
+            "descripcion": "Complete system to manage visitors, with pre-registration, data validation, and stay tracking."
+        },
+        "BuscarUsuarios": {
+            "titulo": "Search Users",
+            "descripcion": "Advanced search for residents and visitors with custom filters and quick access to relevant information."
+        },
+        "Correspondencia": {
+            "titulo": "Correspondence",
+            "descripcion": "Comprehensive management of parcels and correspondence with automatic notifications and delivery logs."
+        },
+        "Registros": {
+            "titulo": "Logs",
+            "descripcion": "Detailed log system with a full history of operations and custom report generation."
+        },
+        "ControlDeAcceso": {
+            "titulo": "Access Control",
+            "descripcion": "Centralized management of all access points with real-time monitoring and barrier control."
+        }
+    },
+    "SobreNosotros": {
+        "titulo": "About Us",
+        "descripcion": "Hard Stack is formed by the best students of computer science and computing. Our team possesses extensive knowledge in hardware, software, PC assembly, and application development. We are a passionate and cohesive group, committed to serving the community through our skills in the field of computing."
+    },
+    "Home": {
+        "SecurityFocus": {
+            "title": "Security Focus",
+            "whatIs": "What is it?",
+            "description": "Security Focus is an innovative project developed by the agency Hardstack to optimize security and management of gated communities. This comprehensive system combines various advanced technologies to ensure effective access control and security.",
+            "whyChooseUs": "Why Choose Us?",
+            "ourServices": "Our Services"
+        },
+        "Features": {
+            "TecnologíaAvanzada": {
+                "title": "Advanced Technology",
+                "description": "We incorporate RFID, Face ID, and speed cameras for efficient access control.",
+                "icon": "bx bxl-slack bx-lg"
+            },
+            "SeguridadIntegral": {
+                "title": "Comprehensive Security",
+                "description": "Robust systems developed with Python for complete neighborhood protection.",
+                "icon": "bx bxs-lock bx-lg"
+            },
+            "GestionSimplificada": {
+                "title": "Simplified Management",
+                "description": "Mobile apps in React Native and a Windows Forms interface for easy and efficient management.",
+                "icon": "bx bxs-cog bx-lg"
+            },
+            "SoporteEspecializado": {
+                "title": "Specialized Support",
+                "description": "We offer personalized assistance to ensure the optimal operation of our system.",
+                "icon": "bx bxs-comment-detail bx-lg"
+            },
+            "AltaConfiabilidad": {
+                "title": "High Reliability",
+                "description": "Our infrastructure based on SQL and Prisma ensures high availability and reliability.",
+                "icon": "bx bxs-check-shield bx-lg"
+            }
+        },
+        "Services": {
+            "MobileApp": {
+                "category": "Mobile App",
+                "icons": [
+                    {
+                        "class": "bx bx-news bx-lg",
+                        "description": "News"
+                    },
+                    {
+                        "class": "bx bx-minus-circle bx-lg",
+                        "description": "Violations"
+                    },
+                    {
+                        "class": "bx bx-pie-chart-alt-2 bx-lg",
+                        "description": "Surveys"
+                    },
+                    {
+                        "class": "bx bx-calendar-event bx-lg",
+                        "description": "Reservations"
+                    },
+                    {
+                        "class": "bx bx-message-rounded-error bx-lg",
+                        "description": "Reports"
+                    },
+                    {
+                        "class": "bx bx-user-plus bx-lg",
+                        "description": "Visitors"
+                    }
+                ]
+            },
+            "WindowsApp": {
+                "category": "Windows App",
+                "icons": [
+                    {
+                        "class": "bx bx-exit bx-lg",
+                        "description": "Entry and exit"
+                    },
+                    {
+                        "class": "bx bx-user-check bx-lg",
+                        "description": "Guest Management"
+                    },
+                    {
+                        "class": "bx bx-search-alt-2 bx-lg",
+                        "description": "Search users"
+                    },
+                    {
+                        "class": "bx bx-package bx-lg",
+                        "description": "Correspondence"
+                    },
+                    {
+                        "class": "bx bx-clipboard bx-lg",
+                        "description": "Logs"
+                    },
+                    {
+                        "class": "bx bxs-traffic-barrier bx-lg",
+                        "description": "Access Control"
+                    }
+                ]
+            },
+            "AccessControl": {
+                "category": "Access Control",
+                "icons": [
+                    {
+                        "class": "bx bx-id-card bx-lg",
+                        "description": "RFID"
+                    },
+                    {
+                        "class": "bx bxs-face bx-lg",
+                        "description": "Face ID"
+                    },
+                    {
+                        "class": "bx bx-fingerprint bx-lg",
+                        "description": "Fingerprint"
+                    },
+                    {
+                        "class": "bx bx-camera-home bx-lg",
+                        "description": "Speed cameras"
+                    }
+                ]
+            },
+            "ConocerMas": "know more"
+        }
+    }
+}
